@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: kollurusrinivasdockeracr 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kollurusrinivasdockeracr
+  template:
+    metadata:
+      labels:
+        app: kollurusrinivasdockeracr 
+    spec:
+      containers:
+        - name: kollurusrinivasdockeracr 
+          image: dockeracr26.azurecr.io/kollurusrinivasdockeracr
+          ports:
+          - containerPort: 3000
